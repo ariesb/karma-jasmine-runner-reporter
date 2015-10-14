@@ -15,7 +15,16 @@
     "karma-reporter",
     "jasmine-runner"
   ],
-  "author": "Aries Beltran <aries.beltran@gmail.com>",
+  "author": {
+    "name": "Aries Beltran",
+    "email": "aries.beltran@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Dinuka De Silva",
+      "email": "dinuka.desilva@pearson.com"
+    }
+  ],
   "dependencies": {
     "simplet": "~0.1.2"
   },
