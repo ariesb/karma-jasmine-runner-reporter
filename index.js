@@ -23,9 +23,6 @@ var JasmineRunnerReporter = function(config, logger, helper) {
       if( file.watched ) {
         var files = glob.sync(file.pattern,{});
         for (var i in files) {
-          //var definition = require('./application/models/' + files[i]).Model;
-          console.log('Child file ' + files[i]);
-
           var sourceFile = helper.normalizeWinPath(path.relative(runnerBase, files[i]));
           specs.push(tmpl.replace('$file', sourceFile));
         }
