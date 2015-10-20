@@ -60,3 +60,4 @@ JasmineRunnerReporter.$inject = ['config', 'logger', 'helper'];
 module.exports = {
   'reporter:jasmine-runner': ['type', JasmineRunnerReporter]
 };
+
