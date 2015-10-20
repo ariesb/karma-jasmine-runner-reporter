@@ -1,6 +1,7 @@
 var path = require('path');
 var fs = require('fs');
 var simplet = require('simplet');
+var glob = require('glob');
 
 
 var JasmineRunnerReporter = function(config, logger, helper) {
@@ -20,8 +21,14 @@ var JasmineRunnerReporter = function(config, logger, helper) {
     var specs = [];
     files.forEach(function(file) {
       if( file.watched ) {
-        var sourceFile = helper.normalizeWinPath(path.relative(runnerBase, file.pattern));
-        specs.push(tmpl.replace('$file', sourceFile));
+        var files = glob.sync(file.pattern,{});
+        for (var i in files) {
+          //var definition = require('./application/models/' + files[i]).Model;
+          console.log('Child file ' + files[i]);
+
+          var sourceFile = helper.normalizeWinPath(path.relative(runnerBase, files[i]));
+          specs.push(tmpl.replace('$file', sourceFile));
+        }
       }
     });
 
